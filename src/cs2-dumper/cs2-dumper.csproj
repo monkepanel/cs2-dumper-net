@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <Platforms>x64</Platforms>
+
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+
+    <AssemblyName>cs2-dumper</AssemblyName>
+    <RootNamespace>Cs2Dumper</RootNamespace>
+    <Version>0.1.3</Version>
+    <Authors>a2x (Rust original); .NET AOT port</Authors>
+
+    <!-- Native AOT publishing. AOT only kicks in at `dotnet publish`; plain `dotnet build`
+         produces a self-contained JIT exe for fast iteration. -->
+    <PublishAot>true</PublishAot>
+    <IsAotCompatible>true</IsAotCompatible>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <StripSymbols>true</StripSymbols>
+    <OptimizationPreference>Speed</OptimizationPreference>
+
+    <!-- Surface every trim/AOT warning so the port stays AOT-clean. -->
+    <TrimmerSingleWarn>false</TrimmerSingleWarn>
+    <WarningLevel>5</WarningLevel>
+  </PropertyGroup>
+
+</Project>

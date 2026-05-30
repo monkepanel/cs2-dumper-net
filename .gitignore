@@ -1,0 +1,9 @@
+bin/
+obj/
+output/
+*.log
+.reference/
+_smoketest/
+_cmp/
+.idea/
+.vs/

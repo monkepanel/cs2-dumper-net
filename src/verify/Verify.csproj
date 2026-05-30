@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <RootNamespace>Cs2Dumper</RootNamespace>
+    <AssemblyName>verify</AssemblyName>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <NoWarn>$(NoWarn);CA1416</NoWarn>
+  </PropertyGroup>
+
+  <!-- Compile the dumper's own source (minus its entry point) into this test assembly so the
+       verification exercises the real writers and has access to their internal types. -->
+  <ItemGroup>
+    <Compile Include="VerifyMain.cs" />
+    <Compile Include="..\cs2-dumper\**\*.cs" Exclude="..\cs2-dumper\Program.cs" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="cs2-dumper/cs2-dumper.csproj" />
+  <Project Path="verify/Verify.csproj" />
+</Solution>
